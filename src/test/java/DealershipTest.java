@@ -3,6 +3,7 @@ import components.Engine;
 import components.Wheels;
 import org.junit.Before;
 import org.junit.Test;
+import store.Dealership;
 import vehicles.ElectricCar;
 import vehicles.SportsCar;
 
@@ -26,9 +27,9 @@ public class DealershipTest {
         wheels1 = new Wheels("Sport");
         chassis1 = new Chassis("Carbon steel");
         sportsCar = new SportsCar("Ferrari", 60000, "blue", 280, engine1, wheels1, chassis1);
-        engine2 = new Engine("Gasoline");
-        wheels2 = new Wheels("Sport");
-        chassis2 = new Chassis("Carbon steel");
+        engine2 = new Engine("Electric");
+        wheels2 = new Wheels("Biodegradable");
+        chassis2 = new Chassis("Leaves");
         electricCar = new ElectricCar("Prius", 20000, "green", 140, engine2, wheels2, chassis2);
         dealership = new Dealership("Two Car Garage");
     }
@@ -41,7 +42,22 @@ public class DealershipTest {
     @Test
     public void dealershipCanAddCars(){
         dealership.add(sportsCar);
-        assertEquals(1, dealership.getCars());
+        assertEquals(1, dealership.getCarCount());
+    }
+
+    @Test
+    public void dealershipCanSellCars(){
+        dealership.add(electricCar);
+        dealership.sellCar(electricCar);
+        assertEquals(electricCar, dealership.sellCar(electricCar));
+    }
+
+    @Test
+    public void dealershipCanRemoveCars(){
+        dealership.add(sportsCar);
+        dealership.add(electricCar);
+        dealership.sellCar(electricCar);
+        assertEquals(1, dealership.getCarCount());
     }
 
 }

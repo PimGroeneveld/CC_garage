@@ -30,7 +30,7 @@ public class ElectricCarTest {
 
     @Test
     public void hasPrice(){
-        assertEquals(20000, electricCar.getPrice());
+        assertEquals(20000, electricCar.price());
     }
 
     @Test

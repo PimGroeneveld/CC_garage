@@ -1,6 +1,8 @@
 package vehicles;
 
-public abstract class Vehicle {
+import behaviours.Sellabe;
+
+public abstract class Vehicle implements Sellabe {
 
     private String model;
     private int price;
@@ -18,7 +20,7 @@ public abstract class Vehicle {
         return model;
     }
 
-    public int getPrice() {
+    public int price() {
         return price;
     }
 

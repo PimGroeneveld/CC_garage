@@ -1,4 +1,7 @@
+package store;
+
 import behaviours.Drivable;
+import behaviours.Sellabe;
 import vehicles.Vehicle;
 
 import java.util.ArrayList;
@@ -17,11 +20,20 @@ public class Dealership {
         return this.name;
     }
 
-    public int getCars() {
+    public int getCarCount() {
         return this.cars.size();
+    }
+
+    public ArrayList<Drivable> getCars() {
+        return cars;
     }
 
     public void add(Drivable car){ //polymorphism
         this.cars.add(car);
+    }
+
+    public Sellabe sellCar(Sellabe car){ //polymorphism
+        this.cars.remove(car);
+        return car;
     }
 }

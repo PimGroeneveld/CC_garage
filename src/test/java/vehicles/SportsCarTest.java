@@ -30,7 +30,7 @@ public class SportsCarTest {
 
     @Test
     public void hasPrice(){
-        assertEquals(60000, sportsCar.getPrice());
+        assertEquals(60000, sportsCar.price());
     }
 
     @Test
