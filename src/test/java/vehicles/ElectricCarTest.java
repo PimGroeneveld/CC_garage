@@ -34,4 +34,9 @@ public class ElectricCarTest {
         assertEquals(140, electricCar.getMaxSpeed());
     }
 
+    @Test
+    public void canDrive(){
+        assertEquals("Vroom.. slow and steady", electricCar.drive());
+    }
+
 }

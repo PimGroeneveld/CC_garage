@@ -34,4 +34,9 @@ public class SportsCarTest {
         assertEquals(280, sportsCar.getMaxSpeed());
     }
 
+    @Test
+    public void canDrive(){
+        assertEquals("Vroom Vroom! Super fast", sportsCar.drive());
+    }
+
 }
